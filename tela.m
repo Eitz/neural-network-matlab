@@ -168,21 +168,27 @@ function calculate_Callback(hObject, eventdata, handles)
     % handles    structure with handles and user data (see GUIDATA)
     [X] = nnLis([handles.metricdata.comprimento_petala;handles.metricdata.largura_petala;handles.metricdata.comprimento_sepala;handles.metricdata.largura_sepala]);
     
+    set(handles.especie_setosa, 'Enable', 'off');
+    set(handles.especie_setosa, 'Enable', 'off');
+    set(handles.especie_setosa, 'Enable', 'off');
     % Setando inputs selecionados ou não
     if X(1) > 0.5
         set(handles.especie_setosa, 'Value', 1);
+        set(handles.especie_setosa, 'Enable', 'on');
     else
         set(handles.especie_setosa, 'Value', 0);
     end
     
     if X(2) > 0.5
         set(handles.especie_versicolor, 'Value', 1);
+        set(handles.especie_versicolor, 'Enable', 'on');
     else
         set(handles.especie_versicolor, 'Value', 0);
     end
     
     if X(3) > 0.5
         set(handles.especie_virginia, 'Value', 1);
+        set(handles.especie_virginia, 'Enable', 'on');
     else
         set(handles.especie_virginia, 'Value', 0);
     end
@@ -250,12 +256,15 @@ function initialize_gui(fig_handle, handles, isreset)
     set(handles.largura_sepala, 'String', handles.metricdata.largura_sepala);
     
     
+    set(handles.especie_setosa, 'Enable', 'off');
+    set(handles.especie_setosa, 'Enable', 'off');
+    set(handles.especie_setosa, 'Enable', 'off');
     set(handles.especie_setosa, 'Value', 0);
     set(handles.especie_versicolor, 'Value', 0);
     set(handles.especie_virginia, 'Value', 0);
     set(handles.especie_setosa, 'String', 'Setosa');
-     set(handles.especie_versicolor, 'String', 'Versicolor');
-     set(handles.especie_virginia, 'String', 'Virgínia');
+    set(handles.especie_versicolor, 'String', 'Versicolor');
+    set(handles.especie_virginia, 'String', 'Virgínia');
 
     % Update handles structure
     guidata(handles.figure1, handles);
