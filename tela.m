@@ -169,8 +169,8 @@ function calculate_Callback(hObject, eventdata, handles)
     [X] = nnLis([handles.metricdata.comprimento_petala;handles.metricdata.largura_petala;handles.metricdata.comprimento_sepala;handles.metricdata.largura_sepala]);
     
     set(handles.especie_setosa, 'Enable', 'off');
-    set(handles.especie_setosa, 'Enable', 'off');
-    set(handles.especie_setosa, 'Enable', 'off');
+    set(handles.especie_versicolor, 'Enable', 'off');
+    set(handles.especie_virginia, 'Enable', 'off');
     % Setando inputs selecionados ou não
     if X(1) > 0.5
         set(handles.especie_setosa, 'Value', 1);
